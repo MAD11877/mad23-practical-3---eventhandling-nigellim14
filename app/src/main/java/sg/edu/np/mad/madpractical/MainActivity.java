@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
         Button followbtn = findViewById(R.id.follow);
         followbtn.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
                 String text = followbtn.getText().toString();
                     if (text.equals("FOLLOW")) {

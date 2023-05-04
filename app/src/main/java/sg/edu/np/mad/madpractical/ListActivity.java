@@ -11,6 +11,7 @@ import java.util.Random;
 
 public class ListActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +20,6 @@ public class ListActivity extends AppCompatActivity {
         ImageView androidimg2 = findViewById(R.id.androidimg2);
 
         Random rand = new Random();
-
         AlertDialog.Builder profile  = new AlertDialog.Builder(this);
         profile.setTitle("Profile")
                 .setMessage("MADness")

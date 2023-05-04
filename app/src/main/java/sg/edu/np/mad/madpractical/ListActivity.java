@@ -17,8 +17,8 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
         ImageView androidimgbg2 = findViewById(R.id.androidimg2);
         ImageView androidimg2 = findViewById(R.id.androidimg2);
-        Random rand = new Random();
 
+        Random rand = new Random();
 
         AlertDialog.Builder profile  = new AlertDialog.Builder(this);
         profile.setTitle("Profile")
@@ -36,7 +36,15 @@ public class ListActivity extends AppCompatActivity {
 
                     }
                 });
+
         androidimgbg2.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                profile.show();
+            }
+        });
+        androidimgbg2.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 profile.show();
             }

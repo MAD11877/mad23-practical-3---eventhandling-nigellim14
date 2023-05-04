@@ -20,14 +20,14 @@ public class MainActivity extends AppCompatActivity {
         int ranint = recieve.getIntExtra("RanInt", 0);
         TextView headText = findViewById(R.id.headtext);
         headText.setText("MAD " + ranint);
-
         User newUser = new User(false);
+
         Button followbtn = findViewById(R.id.follow);
         followbtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 String text = followbtn.getText().toString();
-                if (text.equals("FOLLOW")) {
+                    if (text.equals("FOLLOW")) {
                     followbtn.setText("UNFOLLOW");
                     Toast.makeText(getApplicationContext(), "FOLLOWED", Toast.LENGTH_SHORT).show();
                 } else if (text.equals("UNFOLLOW")) {

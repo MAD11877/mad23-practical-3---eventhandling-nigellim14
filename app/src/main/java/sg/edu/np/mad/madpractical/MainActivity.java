@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,10 +21,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String text = followbtn.getText().toString();
-                if (text == "FOLLOW") {
+                if (text.equals("FOLLOW")) {
                     followbtn.setText("UNFOLLOW");
-                } else {
+                    Toast.makeText(getApplicationContext(), "FOLLOWED", Toast.LENGTH_SHORT).show();
+                } else if (text.equals("UNFOLLOW")) {
                     followbtn.setText("FOLLOW");
+                    Toast.makeText(getApplicationContext(), "UNFOLLOWED", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });

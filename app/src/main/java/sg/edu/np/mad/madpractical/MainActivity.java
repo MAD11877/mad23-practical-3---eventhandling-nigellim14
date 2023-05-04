@@ -16,17 +16,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Intent recieve = getIntent();
         int ranint = recieve.getIntExtra("RanInt", 0);
         TextView headText = findViewById(R.id.headtext);
         headText.setText("MAD " + ranint);
 
-
-        user newUser = new user(false);
-        Button followbtn = findViewById(R.id.followbutton);
+        User newUser = new User(false);
+        Button followbtn = findViewById(R.id.follow);
         followbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
 
             public void onClick(View v) {
                 String text = followbtn.getText().toString();

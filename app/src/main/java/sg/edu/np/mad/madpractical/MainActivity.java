@@ -1,12 +1,13 @@
 package sg.edu.np.mad.madpractical;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,10 +16,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent recieve = getIntent();
+        int ranint = recieve.getIntExtra("RanInt", 0);
+        TextView headText = findViewById(R.id.headtext);
+        headText.setText("MAD " + ranint);
+
+
         user newUser = new user(false);
         Button followbtn = findViewById(R.id.followbutton);
         followbtn.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View v) {
                 String text = followbtn.getText().toString();
                 if (text.equals("FOLLOW")) {
@@ -27,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
                 } else if (text.equals("UNFOLLOW")) {
                     followbtn.setText("FOLLOW");
                     Toast.makeText(getApplicationContext(), "UNFOLLOWED", Toast.LENGTH_SHORT).show();
-
                 }
             }
         });
